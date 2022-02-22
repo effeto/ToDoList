@@ -55,25 +55,43 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="65.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry View Controller-->
         <scene sceneID="uaZ-0d-QpL">
             <objects>
-                <viewController id="Frh-0e-0oy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entry" id="Frh-0e-0oy" customClass="EntryViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xgs-Sy-UAY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zgB-PA-hN6">
+                                <rect key="frame" x="20" y="64" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="qi4-9V-sjd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9G6-Fg-f7E"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zgB-PA-hN6" firstAttribute="top" secondItem="9G6-Fg-f7E" secondAttribute="top" constant="20" id="2c1-xR-ait"/>
+                            <constraint firstItem="zgB-PA-hN6" firstAttribute="leading" secondItem="9G6-Fg-f7E" secondAttribute="leading" constant="20" id="b9o-hE-qJW"/>
+                            <constraint firstItem="9G6-Fg-f7E" firstAttribute="trailing" secondItem="zgB-PA-hN6" secondAttribute="trailing" constant="20" id="rh2-Up-xfz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="field" destination="zgB-PA-hN6" id="Jn9-mi-Vs9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xgg-9b-Swc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="945" y="757"/>
         </scene>
-        <!--View Controller-->
+        <!--Task View Controller-->
         <scene sceneID="Vle-Q6-V0X">
             <objects>
-                <viewController id="FmL-OD-A2L" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="task" id="FmL-OD-A2L" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="r1B-H4-arf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

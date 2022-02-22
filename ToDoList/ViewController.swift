@@ -14,12 +14,14 @@ class ViewController: UIViewController {
     var tasks = [String]()
     
     @IBAction func didTapAdd() {
-        
+        let vc =  storyboard?.instantiateViewController(withIdentifier: "entry") as! EntryViewController
+        vc.title = "New Task"
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title  = "Tasks"
     }
     
 }
