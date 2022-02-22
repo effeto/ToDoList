@@ -66,9 +66,11 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
 }
 
-extension ViewController: UITableViewDelegate{
+extension ViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -78,9 +80,7 @@ extension ViewController: UITableViewDelegate{
         vc.task =  tasks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
-}
-
-extension ViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tasks.count
     }
@@ -92,12 +92,25 @@ extension ViewController: UITableViewDataSource {
         
         content.text = tasks[indexPath.row]
         cell.contentConfiguration = content
-        
-        
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade )
+            tableView.endUpdates()
+        }
+    }
+   
 }
+    
+
 
 
 
