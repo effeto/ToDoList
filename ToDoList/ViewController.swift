@@ -21,7 +21,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title  = "Tasks"
+        let date = Date()
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "dd.MM.YYYY"
+        
+        self.title =  "Tasks for \(dateFormat.string(from: date))"
+        
+        
+        
     }
     
 }
