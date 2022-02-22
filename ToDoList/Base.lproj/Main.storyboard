@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier=" " id="qwY-m8-GOJ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="qwY-m8-GOJ">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qwY-m8-GOJ" id="bib-9y-Cdt">
@@ -95,9 +95,26 @@
                     <view key="view" contentMode="scaleToFill" id="r1B-H4-arf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTv-lc-Bp2">
+                                <rect key="frame" x="12" y="56" width="390" height="794"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nnu-3n-Gxi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nnu-3n-Gxi" firstAttribute="bottom" secondItem="KTv-lc-Bp2" secondAttribute="bottom" constant="12" id="Cc0-qY-boR"/>
+                            <constraint firstItem="KTv-lc-Bp2" firstAttribute="top" secondItem="Nnu-3n-Gxi" secondAttribute="top" constant="12" id="Dmo-8l-jsu"/>
+                            <constraint firstItem="KTv-lc-Bp2" firstAttribute="leading" secondItem="Nnu-3n-Gxi" secondAttribute="leading" constant="12" id="ue4-J9-zXz"/>
+                            <constraint firstItem="Nnu-3n-Gxi" firstAttribute="trailing" secondItem="KTv-lc-Bp2" secondAttribute="trailing" constant="12" id="zH9-4m-zQ4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="KTv-lc-Bp2" id="Imn-Rm-P1k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O9z-GR-3yh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
